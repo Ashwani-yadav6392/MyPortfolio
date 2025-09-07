@@ -1,19 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
 import Navbar from './component/Navbar'
-import HomePage from './component/HomePage'
-import Experince from './component/Experince'
+import Aos from 'aos'
+import "aos/dist/aos.css"
 
 
 const App = () => {
+  useEffect(()=>{
+   Aos.init(); 
+  },[])
   return (
     <>
-
-      <Navbar/>
-      <div className="containter">
-        <HomePage/>
-        <Experince/>
-      </div>
-      
+    <Navbar/>
+     <Outlet/>
     </>
   )
 }
